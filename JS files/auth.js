@@ -6,7 +6,7 @@ function signUp()
     
     auth.createUserWithEmailAndPassword(email, password).then(() => {
         console.log('signed up: ' + email);
-        location.href = "Home.html";
+        location.href = "Create.html";
     }).catch(e => alert(e.message));
     
 }
@@ -19,7 +19,7 @@ function signIn()
 
     auth.signInWithEmailAndPassword(email, password).then(() => {
         console.log('signed in: ' + email);
-        location.href = "Home.html";
+        location.href = "Create.html";
     }).catch(e => alert(e.message));
 }
 

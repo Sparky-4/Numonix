@@ -1,10 +1,12 @@
 function toggleData(loggedIn, user) {
     if (loggedIn) {
-        signedModal.style.display = "flex";
-        signedModal.innerHTML = "Signed in as: <br> " + user.email + '<br>';
-        signedModal.innerHTML += '<br><button id = "logOutButton" class = "accountButton" onclick="signOut()">Log Out</button>';
-        console.log(user)
+        notLoggedContainer.style.display = "none";
+        loggedContainer.style.display = "flex";
+        loggedMain.style.display = "flex";
+        signedHeader.innerHTML = "Signed in as: " + user.email;
     } else {
-        signedModal.style.display = "none";
+        notLoggedContainer.style.display = "flex";
+        loggedContainer.style.display = "none";
+        loggedMain.style.display = "none";
     }
 }
