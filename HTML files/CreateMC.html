@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Numonix</title>
+	<link rel="stylesheet" href="../CSS files/styles.css"><link>
+	<link rel="stylesheet" href="../CSS files/createSet.css"><link>
+	<link rel="preconnect" href="https://fonts.gstatic.com/ ">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="navbar">
+		<img src = "../Images/logo.png" class = "logo">
+		<button id = "homeButton" class = "navbutton" onclick="location.href = 'Home.html';">Home</button>
+		<button id = "aboutButton" class = "navbutton" onclick="location.href = 'About.html';">About</button>
+		<button id = "toolsButton" class = "navbutton" onclick="location.href = 'StudyTools.html';">Study Tools</button>
+		<button id = "createButton" class = "navbutton" onclick="location.href = 'Create.html';">Create</button>
+
+		<button id = "loginButton" class = "accountButton" onclick="location.href = 'Login.html';">Log In</button>
+		<button id = "signUpButton" class = "accountButton" onclick="location.href = 'SignUp.html';">Sign Up</button>
+		
+	</div>
+    <div id = "mainCreateBox">
+        <h1>Create Multiple Choice Quesion Set</h1>
+        <input id="nameBox" placeholder="Enter a name for your question set" class = "topInputs"></input>
+        <p class="label">Name</p>
+        <br>
+        <input id="subjectBox" placeholder='Add a description...' class = "topInputs"></input>
+        <p class="label">Description</p>
+        <div id='questionsContainer'>
+            <div id = "box0"class = "questionBox">
+                <input id="question0" placeholder="Enter Question" class = "topInputs"></input>
+                <p class="label">Question</p>
+                <input id="answer0" placeholder="Enter Answer" class = "topInputs"></input>
+                <p class="label">Answer</p>
+            </div>
+            <br>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+	
+	<script src="../JS files/init.js"></script>
+	<script src="../JS files/auth.js"></script>
+	<script src="../JS files/realtime.js"></script>	
+	<script>
+
+	</script>
+	
+</body>
+</html>

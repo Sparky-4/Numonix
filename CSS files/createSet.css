@@ -1,0 +1,37 @@
+#mainCreateBox{
+    width: 100vw;
+    height: 100vh;
+    padding-left: 7vw;
+    padding-top: 3vw;
+}
+
+.topInputs{
+    width: 45vw;
+    height: 2vw;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #11151C;
+}
+
+.label{
+    margin: none;
+    padding: none;
+}
+
+.topInputs:focus{
+    transition-duration: .2s;
+    border-color: #D66853;
+    outline: none;
+}
+
+#questionsContainer{
+    background-color: #AFAFAF;
+}
+
+.questionBox{
+    width: 80vw;
+    height: 20vh;
+    background-color: #364156;
+}
