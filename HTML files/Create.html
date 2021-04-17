@@ -2,9 +2,33 @@
 <html>
 <head>
 	<title>Numonix</title>
+	<link rel="stylesheet" href="../CSS files/styles.css"><link>
+	<link rel="stylesheet" href="../CSS files/create.css"><link>
 </head>
 <body>
-    
+    <div id="navbar">
+		<img src = "../Images/logo.png" class = "logo">
+		<button id = "homeButton" class = "navbutton" onclick="location.href = 'Home.html';">Home</button>
+		<button id = "aboutButton" class = "navbutton" onclick="location.href = 'About.html';">About</button>
+		<button id = "toolsButton" class = "navbutton" onclick="location.href = 'StudyTools.html';">Study Tools</button>
+		<button id = "createButton" class = "navbutton" onclick="location.href = 'Create.html';">Create</button>
+
+		<button id = "loginButton" class = "accountButton" onclick="location.href = 'Login.html';">Log In</button>
+		<button id = "signUpButton" class = "accountButton" onclick="location.href = 'SignUp.html';">Sign Up</button>
+		
+	</div>
+	<div id = "notLoggedContainer">
+		<img src = "" align = "right">
+		<div class = "leftMain">
+			<h1>Log In or Sign Up to start creating.</h1>
+			<p>You can create your own question sets using 
+				the features of Numonix and allow other to learn study from them.</p>
+		</div>
+		
+	</div>
+	<div id = "loggedContainer">
+
+	</div>
 	<script>
 
 	</script>	

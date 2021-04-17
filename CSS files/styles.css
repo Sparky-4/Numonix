@@ -7,7 +7,7 @@ body{
 #navbar{
     background-color: #212D40;
     display: flex;
-    width: 99vw;
+    width: 100vw;
     height: 12vh;
     align-items: center;
 }
