@@ -11,11 +11,12 @@
     left:  30%;
     transform: translate(-50%, -50%);
     background-color: #D66853;
-    color: #11151C;
+    color: #FFFFFF;
     border-radius: 1vw;
     width: 35vw;
     height: 35vh;
     padding: 5vh;
+    opacity: 0.7;
 }
 
 h1{
@@ -23,6 +24,7 @@ h1{
     color: #11151C;
     font-weight: bolder;
     margin-top: 5%;
+    opacity: 1;
 }
 
 #mainImg{
@@ -35,6 +37,7 @@ h1{
     margin-bottom: 3vh;
     padding: 3vh;
     padding-top: 0%;
+    opacity: 1;
 }
 
 #signUpButton2{
