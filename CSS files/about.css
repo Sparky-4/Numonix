@@ -1,0 +1,28 @@
+#aboutHeader{
+    text-align: center;
+    height: 10vh;   
+    background-color: #364156;
+    color: #FFFFFF;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 5vh;
+    font-size: 5vh;
+    font-weight: bolder;
+}
+
+#textSection{
+    text-align: center;
+    height: 20vh;   
+    background-color: #212D40;
+    color: #FFFFFF;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-size: 3vh;
+    font-weight: bolder;
+}
+
+#aboutText{
+
+}
