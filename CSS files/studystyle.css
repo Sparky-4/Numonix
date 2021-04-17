@@ -1,0 +1,64 @@
+body {
+  background-image: url("../images/studyarea.png")
+}
+
+
+
+.transparentbox {
+   opacity: 0.8;
+   margin: 100px;
+   border: 1px solid black;
+   text-align: center;
+   background-color: #ffffff;
+   filter: alpha(opacity=80);
+height: 300px;
+
+}
+
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 32px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 32px 32px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #7D4E57;
+}
+
+.button1:hover {
+  background-color: #7D4E57;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #D66853;
+}
+
+.button2:hover {
+  background-color: #D66853;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #364156;
+}
+
+.button3:hover {
+  background-color:#364156;
+  color: white;
+}
