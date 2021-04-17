@@ -56,3 +56,7 @@ h1{
     background-color: #364156;
     color: #D66853;
 }
+
+#loggedContainer{
+    display: none;
+}
