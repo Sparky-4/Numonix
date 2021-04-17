@@ -1,3 +1,58 @@
 #notLoggedContainer{
-    
+    width: 100vw;
+    height: 100vw;
+    text-align: center;
+    justify-content: center;
+}
+
+.leftMain{
+    position: absolute;
+    top: 50%;
+    left:  30%;
+    transform: translate(-50%, -50%);
+    background-color: #D66853;
+    color: #11151C;
+    border-radius: 1vw;
+    width: 35vw;
+    height: 35vh;
+    padding: 5vh;
+}
+
+h1{
+    font-size: 4vh;
+    color: #11151C;
+    font-weight: bolder;
+    margin-top: 5%;
+}
+
+#mainImg{
+    border: 5px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#subText{
+    margin-bottom: 3vh;
+    padding: 3vh;
+    padding-top: 0%;
+}
+
+#signUpButton2{
+    outline: none;
+    border-radius: 2vw;
+    width: 10vw;
+    margin-right: .75vw;
+    margin-left: .75vw;
+    height: 8vh;
+    align-self: right;
+    background-color: #212D40;
+    color: #D66853;
+    justify-self: center;
+    font-weight: bolder;
+}
+
+#signUpButton2:hover{
+    transition-duration: .4s;
+    background-color: #364156;
+    color: #D66853;
 }
