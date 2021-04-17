@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="loginstyle.css">   
+</head>
+    <body>
+    	<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn"><img border = "0" alt = "back arrow" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/220px-Hamburger_icon.svg.png" width = "25"></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="website.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="">Contact</a>
+	<a href="">FAQ</a>
+	<a href="">Fun</a>
+  </div>
+</div>
+				
+				<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+		
+		
+		<div class="login-box">
+    <img src="avatar.png" class="avatar">
+        <h1>Login Here</h1>
+            <form>
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+				<input type=button onClick="location.href='newuser.html'" value='Log In'>
+            <a href="#">Forgot Password <br /></a>    
+				
+				
+				<a href="signup.html">New User? Sign Up Here.</a>
+            </form>
+			
+			
+	
+        
+        
+        </div>
+		
+<script>	
+		
+
+</script>
+
+    
+    </body>
+</html>
