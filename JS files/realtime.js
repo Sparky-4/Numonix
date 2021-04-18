@@ -9,4 +9,5 @@ function toggleData(loggedIn, user) {
         loggedContainer.style.display = "none";
         loggedMain.style.display = "none";
     }
+    
 }
