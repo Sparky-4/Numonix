@@ -112,3 +112,40 @@
     background-color: #FFFFFF;
     color: #D66853;
 }
+
+.promptInput{
+    width: 30vw;
+    height: 2vw;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #11151C;
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+.termInput{
+    width: 20vw;
+    height: 2vw;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #11151C;
+    font-size: 3vh;
+    font-weight: 500;
+    margin-top: 1vw;
+}
+
+.termInput:focus{
+    transition-duration: .2s;
+    border-color: #D66853;
+    outline: none;
+}
+
+.promptInput:focus{
+    transition-duration: .2s;
+    border-color: #D66853;
+    outline: none;
+}

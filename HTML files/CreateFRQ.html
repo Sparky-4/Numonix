@@ -31,84 +31,35 @@
         <h1>Add Questions:</h1>
         <div id=questionBoxes>
             <div id = "box0"class = "questionBox">
-                <h1 class="label">1</h1>
+                <h1 class="label">Enter Prompts:</h1>
+                <br>
                 <div>
-                    <input id="question0" placeholder="Enter Question" class = "questionInput"></input>
+                    <input id="short" placeholder="Enter Short Answer Propmt" class = "promptInput"></input>
                     <br>
-                    <p class="label">Question</p>
+                    <p class="label">Short Answer Prompt</p>
                 </div>
                 <div>
-                    <input id="answer0" placeholder="Enter Answer" class = "questionInput"></input>
+                    <input id="long" placeholder="Enter Long Essay Prompt" class = "promptInput"></input>
                     <br>
-                    <p class="label">Answer</p>
+                    <p class="label">Long Essay Prompt</p>
                 </div> 
             </div>
             <br>
             <br>
             <div id = "box1"class = "questionBox">
-                <h1 class="label">2</h1>
+                <h1 class="label">Enter Key Terms</h1>
                 <div>
-                    <input id="question1" placeholder="Enter Question" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Question</p>
-                </div>
-                <div>
-                    <input id="answer1" placeholder="Enter Answer" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Answer</p>
+                    <input id="term1" placeholder="Enter Term" class = "termInput"></input>
+                    <input id="term2" placeholder="Enter Term" class = "termInput"></input>
+                    <input id="term3" placeholder="Enter Term" class = "termInput"></input>
+                    <input id="term4" placeholder="Enter Term" class = "termInput"></input>
+                    <input id="term5" placeholder="Enter Term" class = "termInput"></input>
                 </div> 
             </div>
-            <br>
-            <br>
-            <div id = "box2"class = "questionBox">
-                <h1 class="label">3</h1>
-                <div>
-                    <input id="question2" placeholder="Enter Question" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Question</p>
-                </div>
-                <div>
-                    <input id="answer2" placeholder="Enter Answer" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Answer</p>
-                </div> 
-            </div>
-            <br>
-            <br>
-            <div id = "box3"class = "questionBox">
-                <h1 class="label">4</h1>
-                <div>
-                    <input id="question3" placeholder="Enter Question" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Question</p>
-                </div>
-                <div>
-                    <input id="answer3" placeholder="Enter Answer" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Answer</p>
-                </div> 
-            </div>
-            <br>
-            <br>
-            <div id = "box4"class = "questionBox">
-                <h1 class="label">5</h1>
-                <div>
-                    <input id="question4" placeholder="Enter Question" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Question</p>
-                </div>
-                <div>
-                    <input id="answer4" placeholder="Enter Answer" class = "questionInput"></input>
-                    <br>
-                    <p class="label">Answer</p>
-                </div> 
-            </div>
+            
         </div>
         <br>
         <br>
-        <div id = "box4"class = "questionBox">
-            <button id="addBoxButton" onclick="addBox()">Add More</button>
-        </div>
         <button id="completeButton" onclick="addData()">Create</button>
     </div>
     
@@ -127,29 +78,23 @@
             let name = nameBox.value;
             let description = subjectBox.value;
 
-            let questionArray = [];
-            let answerArray = [];
+            let termsArray = [];
             for(i = 0; i < total; i++)
             {
-                questionArray[i] = document.getElementById("question" + i).value;
-                answerArray[i] = document.getElementById("answer" + i).value;
+                termsArray[i] = document.getElementById("term" + (i+1)).value;
             }
             db.collection('Question Set').add({
                 Name: name,
                 Description: description,
-                Questions: questionArray,
-                Answers: answerArray,
+                Terms: termsArray,
+                ShortPropmt: short.value,
+                LongPropmt: long.value,
                 Type: "frq",
             }).catch(e => alert(e.message)).then(() => {
                 location.href = "Create.html";
             }).catch(e => alert(e.message));
         }
 
-        function addBox()
-        {
-            total++;
-            questionBoxes.innerHTML += '<br><br><div id = "box4"class = "questionBox"><h1 class="label">'+total+'</h1><div><input id="question'+(total-1)+'" placeholder="Enter Question" class = "questionInput"></input><br><p class="label">Question</p></div><div><input id="answer'+(total-1)+'" placeholder="Enter Answer" class = "questionInput"></input><br><p class="label">Answer</p></div> </div>'; 
-        }
 	</script>
 	
 </body>

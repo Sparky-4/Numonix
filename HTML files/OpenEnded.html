@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" href="../CSS files/frqstyle.css"><link>
+        <link rel="stylesheet" href="../CSS files/mcstyle.css"><link>
         <link rel="stylesheet" href="../CSS files/styles.css"><link>
         </head>
         
@@ -15,15 +15,51 @@
                 <button id = "loginButton" class = "accountButton" onclick="location.href = 'Login.html';">Log In</button>
                 <button id = "signUpButton" class = "accountButton" onclick="location.href = 'SignUp.html';">Sign Up</button>
                 
-            </div>
         </div>
         <div id="mainSection">
-            <div id="questionSetHeader"> Question Sets: </div>
-            <button id = "Algebra" class = "questionSetButton" onclick="location.href = 'AlgebraOE.html';" >Algebra</button>
-            <button id = "History" class = "questionSetButton" onclick="location.href = 'HistoryOE.html';" >History</button>
-            <button id = "English" class = "questionSetButton" onclick="location.href = 'EnglishOE.html';" >English</button>
-            <button id = "Geometry" class = "questionSetButton" onclick="location.href = 'GeometryOE.html';" >Geometry</button>
+            <div id="questionSetHeader"> Question Propmts: </div>
         </div>
             
         </div>
+
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+        
+        <script src="../JS files/init.js"></script>
+        <script src="../JS files/auth.js"></script>
+        <script src="../JS files/realtime.js"></script>	
+
+        <script>
+            db.collection("Question Set").where("Type", "==", "frq").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                let data = (doc.id, " => ", doc.data());
+                mainSection.innerHTML += '<button class = "questionSetButton" onclick="start('+"'" + data.Name +"'" +')" >' + data.Name +' - ' + data.Description +'</button>'
+
+            });}).catch((error) => {
+            console.log("Error getting documents: ", error);})
+
+            function start(name)
+            {
+                db.collection("Question Set").where("Name", '==', name).get().then((snapshot) => {
+                    snapshot.forEach((doc) => {
+                        let keyWordsArray = doc.data().Terms;
+                        let long = doc.data().LongPropmt;
+                        let short = doc.data().ShortPropmt;
+                        let questionName = doc.data().Name;
+                        console.log(long, short, name)
+                        localStorage.setItem("keyWordsArray", JSON.stringify(keyWordsArray));
+                        localStorage.setItem("long", long);
+                        localStorage.setItem("short", short);
+                        localStorage.setItem("questionName", questionName);
+                    });
+                }).catch((e) => {
+                    alert("Error finding entry: ", e.message);
+                }).then(() => {
+                    location.href = "OEQuestions.html";
+                });
+            }
+        </script>
+            
     </html>

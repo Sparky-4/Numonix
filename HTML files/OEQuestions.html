@@ -19,22 +19,53 @@
         
         <div id="mainSection">
             <div class= "questions">
-                <h3 class= 'questionHeader'>WRITE YOUR SHORT-ANSWER QUESTION HERE</h3>
+                <h3 class= 'questionHeader' id="shortBox">WRITE YOUR SHORT-ANSWER QUESTION HERE</h3>
                 <p>Type a paragraph-length response</p>
                 <hr />
                 <form>
                     <textarea  rows="10" cols="50" wrap="physical"></textarea>
                     </form>
                 <hr />
-                <h3 class= 'questionHeader'>WRITE YOUR LONG-ANSWER QUESTION HERE</h3>
-                <p>Type a paragraph-length response</p>
+                <h3 class= 'questionHeader' id="longBox">WRITE YOUR LONG-ANSWER QUESTION HERE</h3>
+                <p>Type a multi-paragraph length response</p>
                 <hr />
                 <form>
                     <textarea  rows="20" cols="100" wrap="physical"></textarea>
                     </form>
                 <hr />
             </div>
+            <div id = termsDiv>
+                <h3 class= 'questionHeader'>Helpful Terms</h3>
+                
+            </div>
         </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    
+    <script src="../JS files/init.js"></script>
+    <script src="../JS files/auth.js"></script>
+    <script src="../JS files/realtime.js"></script>	
+
+    <script>
+
+        let termsArray = JSON.parse(localStorage.getItem("keyWordsArray"));
+        let long = localStorage.getItem("long");
+        let short = localStorage.getItem("short");
+        let questionName = localStorage.getItem("questionName");
+        console.log(short, long, questionName)
+
+        shortBox.innerHTML = short;
+        longBox.innerHTML = long;
+        for(i=0;i<termsArray.length;i++)
+        {
+            termsDiv.innerHTML += "<div class = 'term'>" + termsArray[i] + "</div>"
+        }
+
+
+
+    </script>
         
             
     </body>
