@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="../CSS files/studystyle.css"><link>
 <link rel="stylesheet" href="../CSS files/styles.css"><link>
 </head>
-
-<div id="navbar">
+<body>
+	<div id="navbar">
 		<img src = "../Images/logo.png" class = "logo">
 		<button id = "homeButton" class = "navbutton" onclick="location.href = 'Home.html';">Home</button>
 		<button id = "aboutButton" class = "navbutton" onclick="location.href = 'About.html';">About</button>
@@ -15,21 +15,14 @@
 		<button id = "signUpButton" class = "accountButton" onclick="location.href = 'SignUp.html';">Sign Up</button>
 		
 	</div>
-
-
-<body>
-<div class="transparentbox">
-<h1 style="font-family:Arial, Helvetica, sans-serif">What would you like to work on today?</h1>
-<button class="button button1" onClick="location.href='OpenEnded.html';" >Open-Endeds 📝</button>
-<p style="font-family:Arial, Helvetica, sans-serif; font-size:20px">Work with our wide-selection of open-ended questions from our long-answer and short-answer question bank!</p>
-<button class="button button2" onClick="location.href='MultiChoice.html';" >Multiple Choice🔠</button>
-<p style="font-family:Arial, Helvetica, sans-serif; font-size:20px">Improve your process of elimination skills!</p>
-<button class="button button3">Mind Mapping🧠</button>
-<p style="font-family:Arial, Helvetica, sans-serif; font-size:20px"> Learn more about your topic of interest by breaking it down into easy to understand concepts!</p>
-</div>
-
-
-
-
+	<div class="transparentbox">
+		<h1 id = "studyToolsHeader">What would you like to work on today?</h1>
+		<button class="studyButton" onClick="location.href='OpenEnded.html';" >Open-Endeds 📝</button>
+		<h2>Work with our wide-selection of open-ended questions from our long-answer and short-answer question bank!</h2>
+		<button class="studyButton" onClick="location.href='MultiChoice.html';" >Multiple Choice🔠</button>
+		<h2>Improve your process of elimination skills!</p>
+		<button class="studyButton" onClick="location.href='StudyPlans.html';">Custom Study Plan📅</button>
+		<h2> Revolutionize your approach to studying with spaced repetition!</h2>
+	</div>
 </body>
 </html>
