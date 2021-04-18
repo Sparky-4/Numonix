@@ -55,6 +55,7 @@
                         localStorage.setItem("questionArray", JSON.stringify(questionArray));
                         localStorage.setItem("answerArray", JSON.stringify(answerArray));
                         localStorage.setItem("questionName", questionName);
+                        console.log(localStorage)
                     });
                 }).catch((e) => {
                     alert("Error finding entry: ", e.message);
