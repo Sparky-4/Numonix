@@ -16,6 +16,8 @@ body {
    margin-right: 12vw;
    margin-top: 5vw;
    margin-bottom: 5vw;
+   padding: 5vw;
+   padding-top: 0%;
    background-repeat: no-repeat;
    border-radius: 25px;
    text-align: center;
@@ -23,19 +25,20 @@ body {
    color: #D66853;
    filter: alpha(opacity=80);
    height: 120vh;
-   width: 82vw;
+   width: 70vw;
    box-shadow: 10px 10px 5px darkgray;
 
 }
 
 #studyToolsHeader{
-  padding-top: 5vh
+  padding-top: 5vh;
+  padding-bottom: 3vh;
 }
 
 .studyButton {
   border: none;
   border-radius: 25px;
-  color: 11151C ;
+  color: #11151C;
   padding: 13px 13px;
   text-align: center;
   text-decoration: none;

@@ -60,6 +60,8 @@
 			if(i < text.length)
 			{
 				header2.innerHTML += text.charAt(i);
+				if(text.charAt(i) == " ")
+					header2.innerHTML += "<br>";
 				i++;
 				setTimeout(type, speed);	
 			}

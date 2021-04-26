@@ -19,7 +19,7 @@
         
         <form action='/action_page.php'></form>
         <div id="mainSection">
-            
+            <form action='/action_page.php' id="formBody"></form>
         </div>
         <button value="Submit" id="submit" onclick="grade()">Submit</button>
         </form>
@@ -109,31 +109,21 @@
                     taken.push(option3);
                     option1 = createOption(taken, option1);
                 }
-                mainSection.innerHTML += "<form action='/action_page.php'><div class= 'question'>" +
-                    "<h3 class= 'questionHeader'>"+ questions[i] +"</h3>" +
-                    "<p>Choose 1 answer</p>" +
-                    "<hr />" +
-                    "<div class='answerBlock'>" +
-                    "    <input type='radio' id = 'option1_"+i+"'name='"+ option1 +"' class='option' />" +
+                formBody.innerHTML +=
+                    "<h3 class= 'questionHeader'>"+ (i+1) +". " + questions[i] +"</h3>" +
+                    "<hr>" +
+                    "    <input type='radio' id = 'option1_"+i+"' value='"+ option1 +"' name='"+ questions[i] +"'/>" +
                     "    <label>"+ option1 +"</label>" +
-                    "</div>" +
-                    "<hr />" +
-                    "<div class='answerBlock'>" +
-                    "    <input type='radio' id = 'option2_"+i+"' name='"+ option2 +"' class='option' />" +
+                    "<hr>" +
+                    "    <input type='radio' id = 'option2_"+i+"' value='"+ option2 +"' name='"+ questions[i] +"'/>" +
                     "    <label>"+ option2 +"</label>" +
-                    "</div>" +
-                    "<hr />" +
-                    "<div class='answerBlock'>" +
-                    "    <input type='radio' id = 'option3_"+i+"' name='"+ option3 +"' class='option' />" +
+                    "<hr>" +
+                    "    <input type='radio' id = 'option3_"+i+"' value='"+ option3 +"' name='"+ questions[i] +"'/>" +
                     "    <label>"+ option3 +"</label>" +
-                    "</div>" +
-                    "<hr />" +
-                    "<div class='answerBlock'>" +
-                    "    <input type='radio' id = 'option4_"+i+"' name='"+ option4 +"' class='option' />" +
+                    "<hr>" +
+                    "    <input type='radio' id = 'option4_"+i+"' value='"+ option4 +"' name='"+ questions[i] +"'/>" +
                     "    <label>"+ option4 +"</label>" +
-                    "</div>" +
-                    "<hr />" +
-                "</div></form>"
+                    "<hr>";
             }
         }
 
@@ -144,19 +134,21 @@
             {
                 let selected;
                 if(document.getElementById('option1_'+i).checked)
-                    selected = document.getElementById('option1_'+i).name;
+                    selected = document.getElementById('option1_'+i).value;
                 else if(document.getElementById('option2_'+i).checked)
-                    selected = document.getElementById('option2_'+i).name;
+                    selected = document.getElementById('option2_'+i).value;
                 else if(document.getElementById('option3_'+i).checked)
-                    slected = document.getElementById('option3_'+i).name;
+                    selected = document.getElementById('option3_'+i).value;
                 else if(document.getElementById('option4_'+i).checked)
-                    selected = document.getElementById('option4_'+i).name;
+                    selected = document.getElementById('option4_'+i).value;
+                else
+                    selected = "none";
 
                 if(selected == answers[i])
                     score++;
                 console.log(selected, score)
             }
-            mainSection.innerHTML = "Your Score: " + Math.round((score/questions.length)*100) + '%';
+            mainSection.innerHTML = "Your Score: " + score + "/" + questions.length + " (" +Math.round((score/questions.length)*100) + '%)';
             submit.innerHTML = "Return";
             submit.setAttribute('onclick','location.href="MultiChoice.html"')
         }
