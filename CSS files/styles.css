@@ -21,7 +21,7 @@ body{
 }
 
 .logo:hover{
-    transition-duration: .7s;
+    transition-duration: .4s;
     background-color: #364156 ;
 }
 
