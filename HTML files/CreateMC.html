@@ -134,21 +134,52 @@
                 questionArray[i] = document.getElementById("question" + i).value;
                 answerArray[i] = document.getElementById("answer" + i).value;
             }
-            db.collection('Question Set').add({
-                Name: name,
-                Description: description,
-                Questions: questionArray,
-                Answers: answerArray,
-                Type: "mc"
-            }).catch(e => alert(e.message)).then(() => {
-                location.href = "Create.html";
-            }).catch(e => alert(e.message));
+
+            if(!nameBox.value || !subjectBox.value)
+                alert("Please enter a name and description");
+            else
+            {
+                let filled = true;
+                for(i = 0; i < total; i++)
+                {
+                    if(!document.getElementById("question" + i).value || 
+                        !document.getElementById("answer" + i).value)
+                        filled = false;
+                }
+                if(filled)
+                {
+                    db.collection('Question Set').add({
+                    Name: name,
+                    Description: description,
+                    Questions: questionArray,
+                    Answers: answerArray,
+                    Type: "mc"
+                    }).catch(e => alert(e.message)).then(() => {
+                        location.href = "Create.html";
+                    }).catch(e => alert(e.message));
+                }
+                else
+                    alert("Enter at least 5 questions and answers");
+            }
+            
         }
 
         function addBox()
         {
             total++;
+            tempQuestions = [];
+            tempAnswers = [];
+            for(i = 0; i < total-1; i++)
+            {
+                tempQuestions[i] = document.getElementById("question" + i).value;
+                tempAnswers[i] = document.getElementById("answer" + i).value;
+            }
             questionBoxes.innerHTML += '<br><br><div id = "box4"class = "questionBox"><h1 class="label">'+total+'</h1><div><input id="question'+(total-1)+'" placeholder="Enter Question" class = "questionInput"></input><br><p class="label">Question</p></div><div><input id="answer'+(total-1)+'" placeholder="Enter Answer" class = "questionInput"></input><br><p class="label">Answer</p></div> </div>'; 
+            for(i = 0; i < total-1; i++)
+            {
+                document.getElementById("question" + i).value = tempQuestions[i];
+                document.getElementById("answer" + i).value = tempAnswers[i];
+            }
         }
 	</script>
 	
