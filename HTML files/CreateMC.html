@@ -146,6 +146,12 @@
                         !document.getElementById("answer" + i).value)
                         filled = false;
                 }
+                for(i = 0; i < total; i++)
+                {
+                    for(j = 0; j < total; j++)
+                        if(questionArray[i] == questionArray[j] && i != j)
+                            filled = false;
+                }
                 if(filled)
                 {
                     db.collection('Question Set').add({
@@ -159,7 +165,7 @@
                     }).catch(e => alert(e.message));
                 }
                 else
-                    alert("Enter at least 5 questions and answers");
+                    alert("Enter at least 5 unique questions and answers");
             }
             
         }
