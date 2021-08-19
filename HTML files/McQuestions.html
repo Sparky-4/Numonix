@@ -39,6 +39,7 @@
         let name = localStorage.getItem("questionName");
         let questions = JSON.parse(localStorage.getItem('questionArray'));
         let answers = JSON.parse(localStorage.getItem('answerArray'));
+        let selectionArray = [];
 
         function createOption(taken, option)
         {
@@ -55,9 +56,7 @@
                     passed = false;
         
                 if(passed)
-                    optionToReturn = test;
-                
-                                                
+                    optionToReturn = test;                                  
             }
             return optionToReturn;
             return;
@@ -157,10 +156,23 @@
                 if(selected == answers[i])
                     score++;
                 console.log(selected, score)
+                selectionArray.push(selected);
             }
-            mainSection.innerHTML = "Your Score: " + score + "/" + questions.length + " (" +Math.round((score/questions.length)*100) + '%)';
+            formBody.innerHTML = "Your Score: " + score + "/" + questions.length + " (" +Math.round((score/questions.length)*100) + '%)<br><br>';
             submit.innerHTML = "Return";
             submit.setAttribute('onclick','location.href="MultiChoice.html"')
+            showGraded();
+        }
+
+        function showGraded()
+        {
+            for(i = 0; i < questions.length; i++)
+            {
+                formBody.innerHTML +=
+                    "<h3 class= 'questionHeader'>"+ (i+1) +". " + questions[i] +"</h3><hr>" +
+                    "Your Answer: " + selectionArray[i] + "<hr>"+ 
+                    "Correct Answer: " + answers[i] + "<hr>";
+            }
         }
         setUp();
         
