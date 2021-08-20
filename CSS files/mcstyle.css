@@ -77,3 +77,8 @@ body {
   background-color: #D66853;
   color: #212D40
 }
+
+.selected{
+  background-color: #212D40;
+}
+

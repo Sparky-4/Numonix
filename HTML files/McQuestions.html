@@ -118,7 +118,8 @@
                         modArray[i] = i+questions[i];
                 }
 
-                formBody.innerHTML +=
+                /**
+                  formBody.innerHTML +=
                     "<h3 class= 'questionHeader'>"+ (i+1) +". " + questions[i] +"</h3>" +
                     "<hr>" +
                     "    <input type='radio' id = 'option1_"+i+"' value='"+ option1 +"' name='"+ modArray[i] +"_" + "'/>" +
@@ -133,7 +134,26 @@
                     "    <input type='radio' id = 'option4_"+i+"' value='"+ option4 +"' name='"+ modArray[i] +"_" +"'/>" +
                     "    <label>"+ option4 +"</label>" +
                     "<hr>";
+                */
+
+                formBody.innerHTML +=
+                "<h3 class= 'questionHeader'>"+ (i+1) +". " + questions[i] +"</h3>" +
+                "<hr>" +
+                "<div>" +
+                "<div class = '' id = 'option1-" + i +"' onClick='selectOption(" + '"option1-' + i + '"' + ")'>A) " + option1 + "</div><br>" + 
+                "<div id = 'option2'>B) " + option2 + "</div><br>" + 
+                "<div id = 'option3'>C) " + option3 + "</div><br>" + 
+                "<div id = 'option4'>D) " + option4 + "</div><br>" + 
+                "</div>";
             }
+        }
+
+        function selectOption(option)
+        {
+            console.log(option);
+            option.class = 'selected';
+            console.log(option.class);
+
         }
 
         function grade()
@@ -151,7 +171,7 @@
                 else if(document.getElementById('option4_'+i).checked)
                     selected = document.getElementById('option4_'+i).value;
                 else
-                    selected = "none";
+                    selected = "Nothing Selected";
 
                 if(selected == answers[i])
                     score++;
