@@ -79,6 +79,16 @@ body {
 }
 
 .selected{
+  background-color: #D66853;
+  padding: 2vh;
+}
+
+.nonSelected{
+  padding: 2vh;
+}
+
+.nonSelected:hover{
   background-color: #212D40;
+  padding: 2vh;
 }
 

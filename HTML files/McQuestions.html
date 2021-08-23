@@ -140,20 +140,32 @@
                 "<h3 class= 'questionHeader'>"+ (i+1) +". " + questions[i] +"</h3>" +
                 "<hr>" +
                 "<div>" +
-                "<div class = '' id = 'option1-" + i +"' onClick='selectOption(" + '"option1-' + i + '"' + ")'>A) " + option1 + "</div><br>" + 
-                "<div id = 'option2'>B) " + option2 + "</div><br>" + 
-                "<div id = 'option3'>C) " + option3 + "</div><br>" + 
-                "<div id = 'option4'>D) " + option4 + "</div><br>" + 
+                "<div class = 'nonSelected' id = 'option1-" + i +"' onClick='selectOption(" + '"option1-' + i + '",' + i +")'>A) " + option1 + "</div>" + 
+                "<div class = 'nonSelected' id = 'option2-" + i +"' onClick='selectOption(" + '"option2-' + i + '",' + i +")'>B) " + option2 + "</div>" + 
+                "<div class = 'nonSelected' id = 'option3-" + i +"' onClick='selectOption(" + '"option3-' + i + '",' + i +")'>C) " + option3 + "</div>" + 
+                "<div class = 'nonSelected' id = 'option4-" + i +"' onClick='selectOption(" + '"option4-' + i + '",' + i +")'>D) " + option4 + "</div>" + 
                 "</div>";
             }
         }
 
-        function selectOption(option)
+        function selectOption(option, i)
         {
-            console.log(option);
-            option.class = 'selected';
-            console.log(option.class);
+            let element = document.getElementById(option);
+            
+            element.classList.add("selected");
+            element.classList.remove("nonSelected");
 
+            for(let j=1; j < 5; j++)
+            {
+                let temp = document.getElementById("option" + j + "-" + i);
+                if(!(temp == option))
+                {
+                    temp.classList.remove("selected");
+                    temp.classList.add("nonSelected");
+                    console.log(temp)
+                }
+                
+            }
         }
 
         function grade()
