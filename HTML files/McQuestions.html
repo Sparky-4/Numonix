@@ -151,20 +151,17 @@
         function selectOption(option, i)
         {
             let element = document.getElementById(option);
-            
             element.classList.add("selected");
             element.classList.remove("nonSelected");
 
             for(let j=1; j < 5; j++)
             {
                 let temp = document.getElementById("option" + j + "-" + i);
-                if(!(temp == option))
+                if(!(temp == element))
                 {
                     temp.classList.remove("selected");
                     temp.classList.add("nonSelected");
-                    console.log(temp)
                 }
-                
             }
         }
 
@@ -174,17 +171,18 @@
             for(i=0;i<questions.length;i++)
             {
                 let selected;
-                if(document.getElementById('option1_'+i).checked)
-                    selected = document.getElementById('option1_'+i).value;
-                else if(document.getElementById('option2_'+i).checked)
-                    selected = document.getElementById('option2_'+i).value;
-                else if(document.getElementById('option3_'+i).checked)
-                    selected = document.getElementById('option3_'+i).value;
-                else if(document.getElementById('option4_'+i).checked)
-                    selected = document.getElementById('option4_'+i).value;
+                if(document.getElementById('option1-'+i).classList.contains("selected"))
+                    selected = document.getElementById('option1-'+i).innerHTML;
+                else if(document.getElementById('option2-'+i).classList.contains("selected"))
+                    selected = document.getElementById('option2-'+i).innerHTML;
+                else if(document.getElementById('option3-'+i).classList.contains("selected"))
+                    selected = document.getElementById('option3-'+i).innerHTML;
+                else if(document.getElementById('option4-'+i).classList.contains("selected"))
+                    selected = document.getElementById('option4-'+i).innerHTML;
                 else
-                    selected = "Nothing Selected";
+                    selected = "E) Nothing Selected";
 
+                selected = selected.slice(2);
                 if(selected == answers[i])
                     score++;
                 console.log(selected, score)
